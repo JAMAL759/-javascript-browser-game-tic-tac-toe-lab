@@ -1,7 +1,4 @@
 
-
-
-
 function init(){
 
     const variableOne = document.querySelector("#message");
@@ -23,7 +20,7 @@ function init(){
      let board = document.querySelector(".board");
     
         let boardElementSelection = []
-        let boardElementSelectionF
+        let boardElementSelectionO = [];
      function render() {
 
      }
@@ -242,6 +239,84 @@ identification = !identification
                 console.log("This is index "+index);
        ee.target.textContent = "o"
             
+
+
+       boardElementSelectionO.push(Number(ee.target.id))
+              
+                
+       console.log(boardElementSelectionO)
+
+      
+         //  console.log("Condition has been met ")
+          // checking(boardElementSelection);
+
+        
+         
+
+          
+        //  console.log("You are now in the function checking()")
+           let correctCount = 0;
+          for(let i = 0; i < winingCombination.length ; i++) {
+           // console.log("This is the outer loop iteration "+ i);
+              count = 0;
+              for (let j = 0; j < boardElementSelectionO.length ; j++) {
+
+                              
+                    //console.log("This is the manual loop element "+ winingCombination[i][j > 2 ? 2 : j]);
+                   //  console.log("this is the loop element that we just pushed "+ boardElementSelection[j]);
+
+                     for ( let k = 0 ; k < boardElementSelectionO.length ; k++) {
+
+                    //  console.log("This is the manual loop element "+ winingCombination[i][j > 2 ? 2 : j]);
+                    // console.log("this is the loop element that we just pushed "+ boardElementSelection[k]);
+
+               
+                           if (boardElementSelectionO[k] == boardElementSelectionO[correctCount] ) {
+                            //   console.log("no need to compare already  was compared and achieved ")
+                           }
+                           else {
+                          if(boardElementSelectionO[k] == winingCombination[i][j > 2 ? 2 : j]){
+                           //  console.log(" is actully equal to it");
+                               correctCount = k;
+                             if(count < 3) {
+                              count++;
+                             }
+                          }
+                       }
+                       }
+
+  
+              }
+              if(count == 3){
+                //  console.log("It's indeed equal");
+                  countSuc = true;
+                  conidtion = false;
+                  console.log("This is the condition " +conidtion)
+                 
+               //   e.removeEventListener("click" , )
+                
+
+              }
+          
+          }
+
+       
+    console.log(" ---------------------------------------------------")
+    if(countSuc == true) {
+       variableOne.textContent = ` O is the clear winner`
+       handle();
+      // callDetermining();
+       
+    }
+       else {
+         if (count != 3 && index == 9) {
+             variableOne.textContent = "You have lost";
+         } 
+         else {
+            variableOne.textContent = `It's x turn`
+            reverse()
+       }
+     }
              
             
              // boardElementSelection[index].push(ee.target.id)
@@ -255,8 +330,7 @@ identification = !identification
   
                  // console.log(boardElementSelection)
                 //  console.log( "This item has been inserted in the "+boardElementSelection);
-                    variableOne.textContent = `It's x turn`
-                    reverse()
+                
               
               
             }
