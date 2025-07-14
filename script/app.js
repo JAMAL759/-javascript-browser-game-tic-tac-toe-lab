@@ -1,52 +1,26 @@
+
 function init(param , param2){
 
-    // Two parameters where the first parameter is to determine which matrix is chosen whether it's 3 by 3 or 4 by 4
-    
-    const variableOne = document.querySelector("#message");
-    // This constant is used to change the message that appears below the tic tac toe title
+    console.log(" This is the value of param2 = "+param2)
 
+    const variableOne = document.querySelector("#message");
     const  squares = Array.prototype.slice.call(document.querySelectorAll(".sqr"));
-    // This is to collect all the div's the represents the x and o , but it's converted to an array for manipulation purpose.
     
     const  Buttonf = document.querySelector(".buttonn");
-    // this is the reset button
-
     const Button4x4 = document.querySelector("#FourBy")
-    // this is the four by four button that is written as 4 by 4 on screen 
-
     let v = ""
-    // this constant is used to change the text if the same column is selected via AI.
-
 
     let f = false;
-    // this is to determine that the AI did indeed choose a column that is selected by another user 
-    
     let arrayt = [];
-
-    //This is the array that is used for the AI to implement it's selected square , where it's than done in comparison.
-
-
     let iterator = 0;
-
-
     let index = 0
-//This is used to determine if the index reached the squares length or not , becuase if it did than we stop.
-
-
     let countSuc = false;
    // console.dir(squares)
     let identification = true;
-    //This is to determine who's actually turn it is , where it it's true( by default) than x selects the square else it's going to be o
-    
     let count = 0;
-    // This is used to determine if the array comparison between the selected locatoins and the locations that are supposdly correct are true or not , if yes than it counts.
-
     let conidtion = true;
-    // this is to determine if one player did indeed win or not.
 
      variableOne.textContent = `It's x turn`
-     // the default message when the function itself get called 
-
      let did = false
 
      let boards= [];
@@ -58,6 +32,26 @@ function init(param , param2){
      function render() {
 
      }
+
+
+
+
+     const winingCombination5x5 = [
+
+        [0,1,2,3,4],
+        [5,6,7,8,9],
+        [10,11,12,13,14],
+        [15,16,17,18,19],
+        [20,21,22,23,24],
+        [0,5,10,15,20],
+        [1,6,11,16,21],
+        [3,8,13,18,23],
+        [4,9,13,19,24],
+        [0,6,12,18,24],
+        [4,8,12,16,20]
+
+
+    ]
 
 
 
@@ -78,6 +72,11 @@ function init(param , param2){
 
 
     ]
+
+
+
+
+
 
 
         const winingCombination = [
@@ -111,15 +110,17 @@ function init(param , param2){
                    // console.log("This is teh condition in the false section ")
                 
                    e.removeEventListener("click" , determining4)
-                
+                   //e.removeEventListener("click" , ComparisonPurpose4x4)
+                   // debugger;
+
                    
                 }
 
     
                 else {
-    
+                   // console.log("This is teh condition in the true section ")
                     callDetermining4(e)
-            
+                   // handle();
                 }
 
             })
@@ -129,23 +130,317 @@ function init(param , param2){
 
 
     
+
+
+        function handle5() { 
+            console.log("The did is now true of teh clicky")
+            console.log("This is the condition now in the handle4() "+ conidtion);
+
+            squares.forEach((e) => {
+
+                if(conidtion == false ){
+                   // console.log("This is teh condition in the false section ")
+                
+                   e.removeEventListener("click" , determining5)
+                   //e.removeEventListener("click" , ComparisonPurpose4x4)
+                   // debugger;
+
+                   
+                }
+
+    
+                else {
+                   // console.log("This is teh condition in the true section ")
+                    callDetermining5(e)
+                   // handle();
+                }
+
+            })
+
+        }
+     
+
+        function callDetermining5(e) {
+            // console.log("this is the condition "+ conidtion)
+     
+     
+            
+                // console.log("this is the condition when it's true "+conidtion);
+     
+            //console.log("I'm in determinig 4 call")
+     
+            e.addEventListener("click" , determining5);
+            
        
+             
+     
+          
+           
+             
+             
+    
+    
+    
+         }
+
+
+
+       
+
+
+     function determining5(ee) {
+
+       
+       // console.log("I'm in determinig4")
+
+        //console.log( "This has been tapped "+ee.target.id);
+         iterator++;
+         if(identification == true) {
+             if(ee.target.textContent === "o"){
+                     //console.log("Nothing get entered")
+                       variableOne.textContent = `Column is already chosen by another player`
+                                                  }
+
+
+                                 else {
+
+                                  ee.target.textContent = "x"
+
+                                  index++;
+
+                              //   console.log("This is index "+index)
+                              //  console.log("I'm now entering boarElementsSelection4x4" )
+
+                                         ComparisonPurpose5x5(boardElementSelection , ee)
+
+               
+         
+           
+          
+             }
+
+         }
+
+         else { 
+
+             if(ee.target.textContent === "x"){
+                  
+               //  console.log("Nothing got entered")
+                   variableOne.textContent = `Column is already chosen by another player`
+         }
+         else {
+
+
+            if(param2 == true)  {
+
+            
+             
+                //console.log(" this is limit now = "+ limit);
+                    console.log("This is the squares length = "+squares.length)
+                  let random = Math.floor(Math.random() * squares.length);
+                  console.log("This is the random location = "+random);
+            
+                
+                 
+            
+                      if(squares[random].textContent == "x" || squares[random].textContent == "o"){
+                 
+                //console.log("Nothing got entered")
+                  variableOne.textContent = `Column is already chosen by another player`
+                   v =   variableOne.textContent;
+            
+                   f = true 
+            
+            
+                  console.log(v)
+                      }
+                      else {
+                        arrayt
+                        console.log("This is AI array elements = "+arrayt)
+                        squares[random].textContent = "o";
+                        index++;
+                        f = false
+                        ComparisonPurpose5x5(arrayt , random)
+                      }
+            
+                          
+            
+                                               }
+                else {
+
+
+             index++;
+             console.log("This is index "+index);
+    ee.target.textContent = "o"
+         
+
+                 ComparisonPurpose5x5(boardElementSelectionO , ee);
+                }
+                // console.log("This is the condition of winiing in O "+countSuc)
+
+    
+ console.log(" ---------------------------------------------------")
+
+          
+           
+         }
+         
+      
+            
+
+         }
+       
+       
+         
+
+ }
+
+
+
+
+
+ function ComparisonPurpose5x5( array , element ) {
+
+    if (array == arrayt){
+            array.push(element)
+    }
+    else {
+   
+    array.push(Number(element.target.id)) }
+        //  console.log(array);
+            
+    console.log(boardElementSelection)
+    console.log(arrayt)
+
+
+
+    let correctCount = 17;
+
+    for(let i = 0; i < winingCombination5x5.length ; i++) {
+        console.log("This is the outer loop iteration i = "+i)
+
+    count = 0;
+        for (let j = 0; j < array.length ; j++) {
+
+
+              for ( let k = 0 ; k < array.length ; k++) {
+                console.log("This is the element that is in the manual array "+ winingCombination5x5[i][j > 4 ? 4 : j])
+                console.log("This is the element that is the pushed element in the dynamic array "+ array[k]);
+                      if (array[k] == array[correctCount] ) {
+                                 }
+
+                         else {
+                             if(array[k] == winingCombination5x5[i][j > 4 ? 4 : j]){
+                                
+                                      correctCount = k;
+                                      if(count < 5) {
+                                        count++;
+                                        console.log("This is the count count<4 condition "+ count)
+                                        
+                                                     }
+                                                                                                }
+                              }
+                                                                       }     
+
+
+                                                                 }
+      if(count == 5){
+        console.log(" This is the count in the comopariosnPurpose " + count)
+      countSuc = true;
+      conidtion = false;
+      count = 0;
+
+
+
+                   }
+
+                                                       }
+
+
+                                                       if(array == boardElementSelection) {
+
+                                                       if(countSuc == true) {
+                                                        variableOne.textContent = ` X is the clear winner`
+                                                        handle5();
+                                                     //   handle();
+                                                       // callDetermining();
+                                                        
+                                                     }
+                                                        else {
+                                                          if (count != 5 && index == 25) {
+                                                              variableOne.textContent = "You have lost";
+                                                          } 
+                                                          else {
+                                                        variableOne.textContent = `It's o turn`
+                                                        reverse()
+                                                    
+                                                        }
+                                                      }
+                                                    }
+
+                                                    else {
+
+                                                           if(countSuc == true) {
+                                                             variableOne.textContent = ` O is the clear winner`
+                                                              handle5();
+                                                             //handle();
+  // callDetermining();
+   
+                                                                                 }
+                                                            else {
+                                                                   if (count != 5 && index == 25) {
+                                                                   variableOne.textContent = "You have lost";
+                                                                                                 } 
+                                                                        else {
+                                                                        variableOne.textContent = `It's x turn`
+                                                                         reverse()
+                                                                             }
+                                                                  }
+
+                                                           }   
+
+       
+}
+
+
+
+
+
+
+
+
+
 
 
             function handle() {
 
 
+
+        
+
+
+
+
                 squares.forEach( (e)=> {
              
+             
+                 //boards.push(e.)
+                 
                 
              
+             
+                
+                 
+             
                         
-                            if(conidtion == false || size == true) {
-                           
+                          //  console.log("This is the condition Now " +conidtion)
+                          if(conidtion == false || size == true) {
+                            //console.log("This is the condition Now " +conidtion + " and this is the size "+ size)
                              e.removeEventListener("click" , determining)
                           }
                           else {
-                           
+                             //console.log("this is "+did)
+                             //console.log("This is the being called now "+ size + " " + conidtion)
                              callDetermining(e);
                           }
                   
@@ -172,65 +467,26 @@ function init(param , param2){
 
    function reverse() {
 identification = !identification
-console.log("This is the identification "+identification)
-squares.forEach((square) => {
-    handle(square)
-})
-
-
-if(param2 == true && identification == false)  {
-    console.log("I'm in the false condition ")
-
-   
-    
- 
-//console.log(" this is limit now = "+ limit);
-
-let random = Math.floor(Math.random() * squares.length);
-console.log("This is the random location = "+random);
-
-
-
-
-if(squares[random].textContent == "x" || squares[random].textContent == "o"){
-
-
-variableOne.textContent = `Column is already chosen by another player`
-v =   variableOne.textContent;
-
-f = true 
-
-
-console.log(v)
-
-}
-else {
-arrayt
-console.log("This is AI array elements = "+arrayt)
-squares[random].textContent = "o";
-index++;
-f = false
-ComparisonPurpose(arrayt , random)
-
-
-
-}
-
-  
-
-
-
-                       }
-
+console.log("This is identification "+ identification)
    }
 
   
 
 
+    //const 
+
+
+
+
 
 
     function callDetermining(e) {
-  
+       // console.log("this is the condition "+ conidtion)
+      // console.log("this isssss "+did)
+
+       
+           // console.log("this is the condition when it's true "+conidtion);
+
         if(identification == false ) {
             e.click;
             console.log("I'm in")
@@ -251,10 +507,26 @@ ComparisonPurpose(arrayt , random)
     }
 
 
-    function callDetermining4(e) {
-
+    function callDetermining4(e) {      
+        // console.log("this is the condition "+ conidtion)
+ 
+ 
+        
+            // console.log("this is the condition when it's true "+conidtion);
+ 
+        //console.log("I'm in determinig 4 call")
+ 
         e.addEventListener("click" , determining4);
+        
+   
+         
+ 
       
+       
+         
+         
+
+
 
      }
 
@@ -262,10 +534,14 @@ ComparisonPurpose(arrayt , random)
 
      function determining4(ee) {
 
+       
+       // console.log("I'm in determinig4")
+
+        //console.log( "This has been tapped "+ee.target.id);
          iterator++;
          if(identification == true) {
              if(ee.target.textContent === "o"){
-              
+                     //console.log("Nothing get entered")
                        variableOne.textContent = `Column is already chosen by another player`
                                                   }
 
@@ -275,6 +551,9 @@ ComparisonPurpose(arrayt , random)
                                   ee.target.textContent = "x"
 
                                   index++;
+
+                              //   console.log("This is index "+index)
+                              //  console.log("I'm now entering boarElementsSelection4x4" )
 
                                          ComparisonPurpose4x4(boardElementSelection , ee)
 
@@ -377,10 +656,7 @@ ComparisonPurpose(arrayt , random)
     
     function determining(ee) {
 
-        squares.forEach( (square) => {
-
-            square.addEventListener("click" , determining)
-        })
+       
        
          //  console.log( "This has been tapped "+ee.target.id);
             iterator++;
@@ -401,14 +677,8 @@ ComparisonPurpose(arrayt , random)
 
                                             ComparisonPurpose(boardElementSelection , ee)
                                  //           console.log(" ---------------------------------------------------")
-                                        
-
-                                 if ( param2 == true) {
-                                 squares.forEach( (square) => {
-
-                                    square.removeEventListener("click" , determining)
-                                })
-                            }
+                  
+            
               
              
                 }
@@ -416,21 +686,11 @@ ComparisonPurpose(arrayt , random)
             }
   
             else { 
-
-                
   
                 if(ee.target.textContent === "x"){
                      
                    // console.log("Nothing got entered")
                       variableOne.textContent = `Column is already chosen by another player`
-                      if ( param2 == true) {
-                        squares.forEach( (square) => {
-
-                           square.removeEventListener("click" , determining)
-                       })
-                   }
-     
-    
             }
             else {
              
@@ -438,16 +698,50 @@ ComparisonPurpose(arrayt , random)
 
 
                
-           
+               if(param2 == true)  {
+
+            
+             
+    //console.log(" this is limit now = "+ limit);
+
+      let random = Math.floor(Math.random() * squares.length);
+      console.log("This is the random location = "+random);
+
+    
+     
+
+          if(squares[random].textContent == "x" || squares[random].textContent == "o"){
+     
+    //console.log("Nothing got entered")
+      variableOne.textContent = `Column is already chosen by another player`
+       v =   variableOne.textContent;
+
+       f = true 
+
+
+      console.log(v)
+          }
+          else {
+            arrayt
+            console.log("This is AI array elements = "+arrayt)
+            squares[random].textContent = "o";
+            index++;
+            f = false
+            ComparisonPurpose(arrayt , random)
+          }
+
+              
+
+                                   }
 
                                    
-                
+                else {
 
                     ee.target.textContent = "o"
                     index++;
                     ComparisonPurpose(boardElementSelectionO , ee);
                   
-                     
+                     }
                     // console.log("This is index now "+ index)
 
                  //   ComparisonPurpose(boardElementSelectionO , ee);
@@ -792,6 +1086,40 @@ ComparisonPurpose(arrayt , random)
 
 
 
+ if( size3 == true) {
+    console.log("This is teh did in the condition "+ did)
+    console.log("This is did "+ did)
+
+
+    for( let i = 9 ; i <= 24 ; i++ ){
+        console.log("This is the condition "+size)
+        console.log("Making new div's")
+    let el = document.createElement("div");
+        el.setAttribute('class' , "sqr");
+        el.setAttribute('id' , `${i}`);
+        board.append(el)
+    
+        board.style.width = "770px"
+       // el.style.width = "25%"
+        squares.push(el);
+        
+
+           
+       
+      
+    }
+  squares.forEach((D) => {
+   // console.log(D);
+   D.style.width = "18%"
+  })
+  handle5()
+
+ 
+   }
+
+
+
+
    if( size2 == true)  {
     //console.log("This is teh did in the condition "+ did + "for the handle")
     handle();
@@ -808,12 +1136,13 @@ ComparisonPurpose(arrayt , random)
 
 
 let size = false;
-let size2 = false 
+let size2 = false; 
+let size3 = false;
 
 let automated = false;
 const Auto = document.querySelector("#auto")
  const Button4x4 = document.querySelector("#FourBy")
-
+const Button5x5 = document.querySelector("#FiveBy");
 
  
 
@@ -838,7 +1167,12 @@ const Auto = document.querySelector("#auto")
             init(size2 , automated);
         })
 
-
-
+        
+        Button5x5.addEventListener("click" , ()=> {
+            size3 = !size3
+            console.log(size2)
+            console.log(size);
+            init(size3 , automated);
+        })
 
 
