@@ -12,8 +12,38 @@
   <h2 id="message">Message</h2>
 
 
+    <div id="MainView"> 
+  <div id="AlertCard"> 
 
+   <img  id ="img" src = "/assets/GENKUB - Greeting robot@1-2056x1210.png"> 
 
+   <div id="grid">
+    
+    <div class = "instructions" id = "inst1">
+        
+        <h2> Step One </h2>
+
+        <p>Start by selecting if it's you versus random computer</p>
+    
+    </div>
+    <div class = "instructions" id = "inst2"> 
+        <h2> Step Two </h2>
+        <p>Select the grid that you desire to play on</p>
+    </div>
+    <div class = "instructions" id = "inst3"> 
+        <h2> Step Three </h2>
+        <p>Press reset to start again (for the same grid)</p>
+    </div>
+    <div class = "instructions" id = "inst4"> 
+        <h2> Step Four </h2>
+        <p>Keep enjoying the game(if possible)</p>
+    </div>
+ 
+</div>
+<div class="instructions" id="Confirmation"> <p>Start your game</p></div>
+
+  </div>
+      
   <section class="board">
     <div class="sqr" id="0"></div>
     <div class="sqr" id="1"></div>
@@ -25,11 +55,15 @@
     <div class="sqr" id="7"></div>
     <div class="sqr" id="8"></div>
   </section>
- 
-  <button class="buttonn">Reset</button>
-  <button id ="FiveBy">5 by 4</button>
-  <button id ="FourBy">4 by 4</button>
-  <button id ="ThreeBy">3 by 3</button>
-  <button id ="auto">Player versus AI</button>
+  
+
+ <div id="ButtonsGrid"> 
+  <button class="buttonn"><p style="display: none;"> Reset</p></button>
+  <button  id ="FiveBy"><p> 5 by 5 </p></button>
+  <button id ="FourBy"><p> 4 by 4 </p></button>
+  <button id ="ThreeBy"><p> 3 by 3 </p></button>
+  <button id ="auto"> <p> AI</p></button>
+</div>
+</div>
 </body>
 </html>

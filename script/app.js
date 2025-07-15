@@ -1,5 +1,6 @@
 
 function init(param , param2){
+    
 
     console.log(" This is the value of param2 = "+param2)
 
@@ -54,9 +55,6 @@ function init(param , param2){
     ]
 
 
-
-
-
      const winingCombination4x4 = [
 
         [0,1,2,3],
@@ -74,11 +72,6 @@ function init(param , param2){
     ]
 
 
-
-
-
-
-
         const winingCombination = [
 
             [0,1,2],
@@ -93,13 +86,6 @@ function init(param , param2){
 
         ]
 
-     
-
-   
-
-
-      
-
         function handle4() { 
             console.log("The did is now true of teh clicky")
             console.log("This is the condition now in the handle4() "+ conidtion);
@@ -110,10 +96,7 @@ function init(param , param2){
                    // console.log("This is teh condition in the false section ")
                 
                    e.removeEventListener("click" , determining4)
-                   //e.removeEventListener("click" , ComparisonPurpose4x4)
-                   // debugger;
-
-                   
+          
                 }
 
     
@@ -128,8 +111,6 @@ function init(param , param2){
         }
      
 
-
-    
 
 
         function handle5() { 
@@ -171,16 +152,6 @@ function init(param , param2){
      
             e.addEventListener("click" , determining5);
             
-       
-             
-     
-          
-           
-             
-             
-    
-    
-    
          }
 
 
@@ -404,20 +375,7 @@ function init(param , param2){
 
 
 
-
-
-
-
-
-
-
-
             function handle() {
-
-
-
-        
-
 
 
 
@@ -426,12 +384,7 @@ function init(param , param2){
              
                  //boards.push(e.)
                  
-                
-             
-             
-                
-                 
-             
+              
                         
                           //  console.log("This is the condition Now " +conidtion)
                           if(conidtion == false || size == true) {
@@ -450,20 +403,6 @@ function init(param , param2){
              
              
              }
-
-            
-        
-       
-
-
-
-
-
-
-
-
-
-
 
    function reverse() {
 identification = !identification
@@ -519,15 +458,6 @@ console.log("This is identification "+ identification)
         e.addEventListener("click" , determining4);
         
    
-         
- 
-      
-       
-         
-         
-
-
-
      }
 
 
@@ -559,8 +489,6 @@ console.log("This is identification "+ identification)
 
                
          
-           
-          
              }
 
          }
@@ -636,18 +564,6 @@ console.log("This is identification "+ identification)
        
        
          
-
- }
-
-
- function doit(ddd) {
-  
-   
-
-
-         
-
-
 
  }
 
@@ -742,12 +658,6 @@ console.log("This is identification "+ identification)
                     ComparisonPurpose(boardElementSelectionO , ee);
                   
                      }
-                    // console.log("This is index now "+ index)
-
-                 //   ComparisonPurpose(boardElementSelectionO , ee);
-
-                   // console.log("This is the condition of winiing in O "+countSuc)
-
        
     console.log(" ---------------------------------------------------")
  
@@ -1021,6 +931,10 @@ console.log("This is identification "+ identification)
         arrayt.forEach ((event) => {
             arrayt.pop();
         })
+
+        console.log("Here are all the elemenets for boardSelection "+boardElementSelection)
+        console.log("Here are all the elemenets for boardSelectionO "+boardElementSelectionO)
+        console.log("Here are all the elemenets for boardSelection "+arrayt)
         
     })
 
@@ -1029,38 +943,43 @@ console.log("This is identification "+ identification)
     countSuc = false;
     //console.log("This is the condition of wining in the reset button after clicked "+ countSuc)
     conidtion = true;
+    //identification =
+
+    squares.forEach ((event) => {
+
+       console.log(" This is the text content " + event.textContent)
+    })
+
+
+
     index = 0;
-    handle4()
-
+    if(size2 == true){
     handle()
+    }
 
+    if(size3 == true) {
+        handle5();
+    }
+
+    if(size == true){
+    
+ 
+    handle4()
+    }
 
    })
 
 
 
 
-    // console.log("I havce been clicked")
-
-
-
-
-
-
-
-  
-
-
 
 
  if( size == true) {
-    console.log("This is teh did in the condition "+ did)
-    console.log("This is did "+ did)
+   
 
 
     for( let i = 9 ; i <= 15 ; i++ ){
-        console.log("This is the condition "+size)
-        console.log("Making new div's")
+      
     let el = document.createElement("div");
         el.setAttribute('class' , "sqr");
         el.setAttribute('id' , `${i}`);
@@ -1126,10 +1045,43 @@ console.log("This is identification "+ identification)
    }
   
 
+   
 
 
 
-//updateBoard();
+   if(size2 == true){
+    if(size == true) {
+        console.log("I'm now here in the condition of true and than true")
+        for( let i = 9 ; i <= 15 ; i++ ){
+            console.log("This is the condition "+size)
+            console.log("removing new div's")
+        //let el = document.querySelector(`#${i}`);
+
+          let el = document.getElementById(`${i}`)
+        //   console.log("This is is the el ",el)
+            el.remove()
+            // console.log(el)
+
+           // board.append(el)
+        
+            board.style.width = "425px"
+           // el.style.width = "25%"
+         //  squares[i].pop();
+            
+    
+               
+           
+          
+        }
+      squares.forEach((D) => {
+       // console.log(D);
+       D.style.width = "30%"
+      })
+
+    }
+handle()
+}
+
 
 }
 
@@ -1143,8 +1095,8 @@ let automated = false;
 const Auto = document.querySelector("#auto")
  const Button4x4 = document.querySelector("#FourBy")
 const Button5x5 = document.querySelector("#FiveBy");
-
- 
+const Start = document.querySelector("#Confirmation");
+ const Alert = document.querySelector('#AlertCard')
 
  Auto.addEventListener("click", () => {
 
@@ -1174,5 +1126,13 @@ const Button5x5 = document.querySelector("#FiveBy");
             console.log(size);
             init(size3 , automated);
         })
+
+
+Start.addEventListener("click",(choice) => {
+
+    console.log("It's working !!!!!!!!!")
+    Alert.style.display = "none"
+})
+
 
 

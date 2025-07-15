@@ -1,9 +1,13 @@
 body {
-    background-color: gainsboro;
+    background: #a0bab7;
+    background: linear-gradient(90deg,rgba(160, 186, 183, 1) 0%, rgba(172, 189, 191, 1) 50%, rgba(131, 138, 143, 1) 100%);
     /* Use a system font, if none are available use an available sans-sarif */
     font-family: system-ui, sans-serif;
     margin: 0;
   }
+  
+
+
   
   .board {
     display: flex;
@@ -38,3 +42,491 @@ body {
     
     
   }
+
+
+  #MainView {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+
+  #AlertCard{
+
+    background: #a4bab6;
+    background: rgba(164, 186, 182, 0.99);
+    width: 800px;
+    height: 800px;
+
+    
+
+margin-left: 43.5%;
+margin-top: -0.4%;
+position: fixed;
+
+
+
+
+   
+@media screen and (max-width: 1000px) {
+
+    margin-left: 25.0%;
+    margin-top: -0.4%;
+    
+
+}
+
+
+@media screen and (max-width: 2056px) and (min-width: 1844px) {
+    margin-left: 30.0%;
+    margin-top: -0.4%;
+    
+}
+
+
+
+@media screen and (max-width: 1843px) and (min-width: 1632px) {
+    margin-left: 35.0%;
+    margin-top: -0.4%;
+    
+}
+
+
+@media screen and (max-width: 1632px) and (min-width: 1356px) {
+    margin-left: 32.0%;
+    margin-top: -0.4%;
+    
+}
+
+
+
+@media screen and (max-width: 1355px) and (min-width: 1201px) {
+    margin-left: 30.0%;
+    margin-top: -0.4%;
+    
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1000px) {
+    margin-left: 30.0%;
+    margin-top: -0.4%;
+    
+}
+
+
+@media screen and (max-width: 850px) and (min-width: 400px) {
+    margin-left: 10.0%;
+    margin-top: -0.4%;
+    
+}
+    
+
+
+
+  }
+
+
+  #img{
+    height: 300px;
+    width: 300px;
+   
+    margin-left: 13%;
+    margin-top: -0.4%;
+    position: fixed;
+  }
+
+  #grid{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    gap: 16px;
+    position: fixed;
+    margin-top: 20%;
+    margin-left: 0.96%;
+    
+  }
+
+  .instructions { 
+    
+
+    width: 178px;
+    height: 200px;
+    
+    background-color: aliceblue;
+    border-radius: 10px;
+    
+  }
+
+  #Confirmation{
+    display: flex;
+    margin: auto;
+    margin-top: 90%;
+    width: 400px;
+    height: 50px;
+
+    background-color: aliceblue;
+  }
+
+
+  #inst1{
+    background-color: rgb(9, 10, 10);
+  }
+
+
+
+  #inst1 h2{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white
+  }
+
+
+  #inst1 p{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white;
+    text-align: center;
+  }
+
+
+  #inst2 p{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white;
+    text-align: center;
+  }
+
+
+  #inst3 p{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white;
+    text-align: center;
+  }
+
+
+  #inst4 p{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white;
+    text-align: center;
+  }
+
+
+
+  #inst2{
+    background-color: rgb(9, 10, 10);
+  }
+
+
+
+  #inst2 h2{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white
+  }
+
+
+
+  #inst3{
+    background-color: rgb(9, 10, 10);
+  }
+
+
+
+  #inst3 h2{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white
+  }
+
+
+
+
+  #inst4{
+    background-color: rgb(9, 10, 10);
+  }
+
+
+
+  #inst4 h2{
+    /*background-color: rgb(9, 10, 10);*/
+    color:white
+
+  }
+
+
+  #AlertCard{
+    border-radius: 30px;
+
+    -webkit-box-shadow: -10px 0px 13px -7px #394143, 10px 0px 13px -7px #404949, -1px 5px 15px 5px rgba(133,155,165,0); 
+    box-shadow: -10px 0px 13px -7px #3e4a48, 10px 0px 13px -7px #415e5c, -1px 5px 15px 5px rgba(133,155,165,0);
+  }
+
+  #Confirmation{
+   display: flex;
+    color:black;
+    justify-content: center;
+  }
+
+
+
+
+  #Confirmation p{
+    text-align: center;
+   /* color:black;*/
+  }
+
+  #ButtonsGrid{
+    width: 800px;
+    height: 70px;
+    border-radius:10px;
+    margin: auto;
+    margin-bottom: -51.5%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(28, 41, 41 , 0.2);
+    justify-content: space-evenly;
+
+
+
+  }
+
+
+  .buttonn {
+    background-color: #394143;
+  
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+margin-top: 0.7%;
+
+  }
+
+  #FiveBy{
+
+
+    background-color: #394143;
+  
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+    margin-top: 0.7%;
+
+  }
+
+  #FourBy{
+
+
+    background-color: #394143;
+  
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+    margin-top: 0.7%;
+    
+  }
+
+
+
+  #ThreeBy{
+    background-color: #394143;
+  
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+    margin-top: 0.7%;
+  }
+
+  #auto{
+
+    background-color: #394143;
+
+    background-image: url("/assets/Retrofuturistic\ circuit\ loop@1-2056x1210.jpg");
+    
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+margin-top: 0.7%;
+
+
+  }
+
+
+  #FiveBy{
+
+
+
+    background-color: #394143;
+
+    background-image: url("/assets/Play@1-2056x1211.jpg");
+    
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+margin-top: 0.7%;
+
+  }
+
+  #FourBy{
+    background-color: #394143;
+
+    background-image: url("/assets/Play@1-2056x1211.jpg");
+    
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+margin-top: 0.7%;
+
+  }
+
+  #ThreeBy{
+    
+
+    background-color: #394143;
+
+    background-image: url("/assets/Play@1-2056x1211.jpg");
+    
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+margin-top: 0.7%;
+  }
+
+  #ButtonsGrid #ThreeBy p:hover {
+
+    background-color: rgba(131, 138, 143, 1);
+    border-radius: 3px;
+    margin-top: -20px;
+    margin-left: 5px;
+    font-size: 13px;
+
+  } 
+
+
+  #ButtonsGrid #FourBy p:hover {
+
+    background-color: rgba(131, 138, 143, 1);
+    border-radius: 3px;
+    margin-top: -20px;
+    margin-left: 5px;
+    font-size: 13px;
+
+  } 
+
+
+
+
+  #ButtonsGrid #FiveBy p:hover {
+
+    background-color: rgba(131, 138, 143, 1);
+    border-radius: 3px;
+    margin-top: -20px;
+    margin-left: 5px;
+    font-size: 13px;
+
+  } 
+
+
+
+  #ButtonsGrid .buttonn p:hover {
+
+    background-color: rgba(131, 138, 143, 1);
+    border-radius: 3px;
+    margin-top: -20px;
+    margin-left: 5px;
+    font-size: 13px;
+
+  } 
+
+
+  .buttonn {
+  
+    background-image: url("/assets/StartButtonAnimatino@1-1560x1218.jpg");
+    
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border: solid 1px black;
+
+    border-radius: 10px;
+
+margin-top: 0.7%;
+  }
+
+
+  #ButtonsGrid .buttonn p:hover {
+
+    background-color: rgba(131, 138, 143, 1);
+    border-radius: 3px;
+    margin-top: -20px;
+    margin-left: 5px;
+    font-size: 13px;
+    visibility: block;
+
+
+
+   
+
+  } 
+
+
+  #ButtonsGrid #auto p:hover {
+
+    background-color: rgba(131, 138, 143, 1);
+    border-radius: 3px;
+    margin-top: -20px;
+    margin-left: 5px;
+    font-size: 13px;
+    visibility: block;
+
+
+
+   
+
+  } 
+
+
+  /* #ButtonsGrid .buttonn p {
+
+    background-color: rgba(131, 138, 143, 1);
+    border-radius: 3px;
+    visibility: hidden;
+    font-size: 13px;
+
+    
+
+
+   
+
+  }  */
