@@ -346,7 +346,7 @@ margin-top: 0.7%;
 
     background-color: #394143;
 
-    background-image: url("/assets/Retrofuturistic\ circuit\ loop@1-2056x1210.jpg");
+    background-image: url("../assets/Retrofuturistic\ circuit\ loop@1-2056x1210.jpg");
     
     background-size: cover ;
     background-repeat: no-repeat;
@@ -369,7 +369,7 @@ margin-top: 0.7%;
 
     background-color: #394143;
 
-    background-image: url("/assets/Play@1-2056x1211.jpg");
+    background-image: url("../assets/Play@1-2056x1211.jpg");
     
     background-size: cover ;
     background-repeat: no-repeat;
@@ -387,7 +387,7 @@ margin-top: 0.7%;
   #FourBy{
     background-color: #394143;
 
-    background-image: url("/assets/Play@1-2056x1211.jpg");
+    background-image: url("../assets/Play@1-2056x1211.jpg");
     
     background-size: cover ;
     background-repeat: no-repeat;
@@ -407,7 +407,7 @@ margin-top: 0.7%;
 
     background-color: #394143;
 
-    background-image: url("/assets/Play@1-2056x1211.jpg");
+    background-image: url("../assets/Play@1-2056x1211.jpg");
     
     background-size: cover ;
     background-repeat: no-repeat;
@@ -470,7 +470,7 @@ margin-top: 0.7%;
 
   .buttonn {
   
-    background-image: url("/assets/StartButtonAnimatino@1-1560x1218.jpg");
+    background-image: url("../assets/StartButtonAnimatino@1-1560x1218.jpg");
     
     background-size: cover ;
     background-repeat: no-repeat;
