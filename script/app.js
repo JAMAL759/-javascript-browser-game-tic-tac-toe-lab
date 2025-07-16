@@ -20,7 +20,6 @@ function init(param , param2){
     let identification = true;
     let count = 0;
     let conidtion = true;
-    let variableSave = ""
 
      variableOne.textContent = `It's x turn`
      let did = false
@@ -412,11 +411,7 @@ function init(param , param2){
 
    function reverse() {
 identification = !identification
-if(param2 == true){
-    determining()
-}
 console.log("This is identification "+ identification)
-
    }
 
   
@@ -586,8 +581,6 @@ console.log("This is identification "+ identification)
 
        console.log("I'm here in the determining")
        
-        variableSave = ee; 
-        
          //  console.log( "This has been tapped "+ee.target.id);
             iterator++;
             if(identification == true) {
@@ -608,7 +601,6 @@ console.log("This is identification "+ identification)
                                             ComparisonPurpose(boardElementSelection , ee)
                                  //           console.log(" ---------------------------------------------------")
                   
-                                 
             
               
              
@@ -689,8 +681,6 @@ console.log("This is identification "+ identification)
             
 
     }
-
-    
     
 
     
@@ -781,7 +771,6 @@ console.log("This is identification "+ identification)
                                                               } 
                                                               else {
                                                             variableOne.textContent = `It's o turn`
-                                                            
                                                             reverse()
                                                         
                                                             }
@@ -990,7 +979,7 @@ console.log("This is identification "+ identification)
         }
 
         
-    if(size3 == true && size == false) {
+    if(size3 == true) {
         handle5();
     }
 
