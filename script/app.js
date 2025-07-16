@@ -20,6 +20,7 @@ function init(param , param2){
     let identification = true;
     let count = 0;
     let conidtion = true;
+    let variableSave = ""
 
      variableOne.textContent = `It's x turn`
      let did = false
@@ -167,7 +168,7 @@ function init(param , param2){
         //console.log( "This has been tapped "+ee.target.id);
          iterator++;
          if(identification == true) {
-             if(ee.target.textContent === "o"){
+             if(ee.target.textContent === "o" || ee.target.textContent === "x"){
                      //console.log("Nothing get entered")
                        variableOne.textContent = `Column is already chosen by another player`
                                                   }
@@ -194,7 +195,7 @@ function init(param , param2){
 
          else { 
 
-             if(ee.target.textContent === "x"){
+             if(ee.target.textContent === "o" || ee.target.textContent === "x"){
                   
                //  console.log("Nothing got entered")
                    variableOne.textContent = `Column is already chosen by another player`
@@ -377,21 +378,26 @@ function init(param , param2){
 
             function handle() {
 
-
+                console.log("I'm now here")
 
                 squares.forEach( (e)=> {
-             
+                    console.log("This is the e = "+ e)
+                    console.log( "this is the condition = ",conidtion)
              
                  //boards.push(e.)
                  
               
                         
                           //  console.log("This is the condition Now " +conidtion)
-                          if(conidtion == false || size == true) {
+
+                          
+                          if(conidtion == false) {
+                            console.log("I'm here in false")
                             //console.log("This is the condition Now " +conidtion + " and this is the size "+ size)
                              e.removeEventListener("click" , determining)
                           }
                           else {
+                            console.log("I'm now in this area")
                              //console.log("this is "+did)
                              //console.log("This is the being called now "+ size + " " + conidtion)
                              callDetermining(e);
@@ -406,7 +412,11 @@ function init(param , param2){
 
    function reverse() {
 identification = !identification
+if(param2 == true){
+    determining()
+}
 console.log("This is identification "+ identification)
+
    }
 
   
@@ -423,6 +433,8 @@ console.log("This is identification "+ identification)
        // console.log("this is the condition "+ conidtion)
       // console.log("this isssss "+did)
 
+
+        console.log("I'm now here in callDetermining")
        
            // console.log("this is the condition when it's true "+conidtion);
 
@@ -432,7 +444,7 @@ console.log("This is identification "+ identification)
 
         }
         else {
-
+            console.log("Hey there I'm right here in the else of call Determining")
        e.addEventListener("click" , determining);
 
         }
@@ -470,7 +482,7 @@ console.log("This is identification "+ identification)
         //console.log( "This has been tapped "+ee.target.id);
          iterator++;
          if(identification == true) {
-             if(ee.target.textContent === "o"){
+             if(ee.target.textContent === "o" || ee.target.textContent === "x" ){
                      //console.log("Nothing get entered")
                        variableOne.textContent = `Column is already chosen by another player`
                                                   }
@@ -495,7 +507,7 @@ console.log("This is identification "+ identification)
 
          else { 
 
-             if(ee.target.textContent === "x"){
+             if(ee.target.textContent === "o" || ee.target.textContent === "x"){
                   
                //  console.log("Nothing got entered")
                    variableOne.textContent = `Column is already chosen by another player`
@@ -572,28 +584,31 @@ console.log("This is identification "+ identification)
     
     function determining(ee) {
 
+       console.log("I'm here in the determining")
        
-       
+        variableSave = ee; 
+        
          //  console.log( "This has been tapped "+ee.target.id);
             iterator++;
             if(identification == true) {
-                if(ee.target.textContent === "o"){
+                if(ee.target.textContent === "o" || ee.target.textContent === "x"){
                       //  console.log("Nothing get entered")
                           variableOne.textContent = `Column is already chosen by another player`
                                                      }
 
 
                                     else {
-
+ 
                                      ee.target.textContent = "x"
 
                                      index++;
 
                                     //console.log("This is index "+index)
-
+                                                console.log("I'm here in the befoer Comparison Purpose")
                                             ComparisonPurpose(boardElementSelection , ee)
                                  //           console.log(" ---------------------------------------------------")
                   
+                                 
             
               
              
@@ -603,7 +618,7 @@ console.log("This is identification "+ identification)
   
             else { 
   
-                if(ee.target.textContent === "x"){
+                if(ee.target.textContent === "o" || ee.target.textContent === "x"){
                      
                    // console.log("Nothing got entered")
                       variableOne.textContent = `Column is already chosen by another player`
@@ -674,6 +689,8 @@ console.log("This is identification "+ identification)
             
 
     }
+
+    
     
 
     
@@ -691,7 +708,7 @@ console.log("This is identification "+ identification)
         
                 
         console.log("This is the x array = "+boardElementSelection)
-        console.log("This is the o array =  "+ array);
+        console.log("This is the o array =  "+ boardElementSelectionO);
 
 
 
@@ -717,15 +734,18 @@ console.log("This is identification "+ identification)
 
 
                              else {
+                                console.log("This is the element in the manual = "+ winingCombination[i][j > 2 ? 2 : j])
+                                console.log("This is the element in the dynaimc = "+ array[k])
                                  if(array[k] == winingCombination[i][j > 2 ? 2 : j]){
 
 
                                        
                                           correctCount = k;
                                           if(count < 3) {
-                                          //  console.log("This is the count "+ count)
-                                         //   console.log("It's equal")
+                                            console.log("This is the count "+ count)
+                                            console.log("It's equal")
                                             count++;
+                                            console.log("this is count = ", count)
                                       
                                                          }
                                                                                    }
@@ -735,7 +755,7 @@ console.log("This is identification "+ identification)
 
                                                                      }
           if(count == 3){
-          //  console.log(" This is the count in the comopariosnPurpose " + count)
+            console.log(" This is the count in the comopariosnPurpose " + count)
           countSuc = true;
           conidtion = false;
           count = 0;
@@ -761,6 +781,7 @@ console.log("This is identification "+ identification)
                                                               } 
                                                               else {
                                                             variableOne.textContent = `It's o turn`
+                                                            
                                                             reverse()
                                                         
                                                             }
@@ -953,19 +974,26 @@ console.log("This is identification "+ identification)
 
 
     index = 0;
-    if(size2 == true){
-    handle()
+    if(size2 == true && size == true){
+    handle4()
     }
 
-    if(size3 == true) {
+    if(size2 == true && size == false ){
+        handle()
+    }
+
+
+    if(size == true && size3 == true ){
+    
+ 
+        handle4()
+        }
+
+        
+    if(size3 == true && size == false) {
         handle5();
     }
 
-    if(size == true){
-    
- 
-    handle4()
-    }
 
    })
 
@@ -1052,38 +1080,95 @@ console.log("This is identification "+ identification)
    if(size2 == true){
     if(size == true) {
         console.log("I'm now here in the condition of true and than true")
-        for( let i = 9 ; i <= 15 ; i++ ){
-            console.log("This is the condition "+size)
-            console.log("removing new div's")
-        //let el = document.querySelector(`#${i}`);
-
-          let el = document.getElementById(`${i}`)
-        //   console.log("This is is the el ",el)
-            el.remove()
-            // console.log(el)
-
-           // board.append(el)
-        
-            board.style.width = "425px"
-           // el.style.width = "25%"
-         //  squares[i].pop();
-            
-    
-               
-           
+        squares.forEach(el => el.remove())
+        squares.length = 0
           
+
+        for( let i = 0  ; i < 9 ; i++ ){
+      
+            let el = document.createElement("div");
+                el.setAttribute('class' , "sqr");
+                el.setAttribute('id' , `${i}`);
+                board.append(el)
+            
+                board.style.width = "570px"
+               // el.style.width = "25%"
+                squares.push(el);
+                console.log(el)
+
+                
+                
+        
+                   
+               
+              
+            }
+          squares.forEach((D) => {
+           // console.log(D);
+           D.style.width = "22%"
+          })
+
+
         }
       squares.forEach((D) => {
        // console.log(D);
        D.style.width = "30%"
       })
 
-    }
+      console.log("I'm here")
 handle()
+    }
+
+
+   
+    if(size == true){
+        if(size3 == true) {
+            console.log("I'm now here in the condition of true and than true")
+            squares.forEach(el => el.remove())
+            squares.length = 0
+              
+    
+            for( let i = 0  ; i <= 15 ; i++ ){
+          
+                let el = document.createElement("div");
+                    el.setAttribute('class' , "sqr");
+                    el.setAttribute('id' , `${i}`);
+                    board.append(el)
+                
+                    board.style.width = "650px"
+                   // el.style.width = "25%"
+                    squares.push(el);
+                    console.log(el)
+    
+                    
+                    
+            
+                       
+                   
+                  
+                }
+              squares.forEach((D) => {
+               // console.log(D);
+               D.style.width = "22%"
+              })
+    
+    
+            }
+          squares.forEach((D) => {
+           // console.log(D);
+           D.style.width = "22%"
+          })
+    
+          console.log("I'm here")
+    handle4()
+        }
+
 }
 
 
-}
+
+
+
 
 
 
