@@ -963,26 +963,19 @@ console.log("This is identification "+ identification)
 
 
     index = 0;
-    if(size2 == true && size == true){
-    handle4()
+    if(size2 == true){
+    handle()
     }
 
-    if(size2 == true && size == false ){
-        handle()
-    }
-
-
-    if(size == true && size3 == true ){
-    
- 
-        handle4()
-        }
-
-        
     if(size3 == true) {
         handle5();
     }
 
+    if(size == true){
+    
+ 
+    handle4()
+    }
 
    })
 
@@ -1109,48 +1102,7 @@ handle()
     }
 
 
-   
-    if(size == true){
-        if(size3 == true) {
-            console.log("I'm now here in the condition of true and than true")
-            squares.forEach(el => el.remove())
-            squares.length = 0
-              
     
-            for( let i = 0  ; i <= 15 ; i++ ){
-          
-                let el = document.createElement("div");
-                    el.setAttribute('class' , "sqr");
-                    el.setAttribute('id' , `${i}`);
-                    board.append(el)
-                
-                    board.style.width = "650px"
-                   // el.style.width = "25%"
-                    squares.push(el);
-                    console.log(el)
-    
-                    
-                    
-            
-                       
-                   
-                  
-                }
-              squares.forEach((D) => {
-               // console.log(D);
-               D.style.width = "22%"
-              })
-    
-    
-            }
-          squares.forEach((D) => {
-           // console.log(D);
-           D.style.width = "22%"
-          })
-    
-          console.log("I'm here")
-    handle4()
-        }
 
 }
 
